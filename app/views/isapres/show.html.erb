@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @isapre.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @isapre.description %>
+</p>
+
+<p>
+  <strong>Other:</strong>
+  <%= @isapre.other %>
+</p>
+
+<%= link_to 'Edit', edit_isapre_path(@isapre) %> |
+<%= link_to 'Back', isapres_path %>

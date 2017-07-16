@@ -1,0 +1,2 @@
+class Isapre < ApplicationRecord
+end

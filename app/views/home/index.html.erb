@@ -1,0 +1,43 @@
+<div class="parallax" style="background-image: url(<%= asset_path 'homev2.jpg' %>); height: 100%; padding-top: 15%; padding-bottom: 25% !important">
+        <h1 class="titulo">Porque tu salud no da lo mismo!!</h1>
+        <h1 class="sub_titulo">¡Conoce nuestras Isapres!</h1>
+</div>
+
+<div class="parallax" style="background-color: white; padding-top: 10%; padding-bottom: 15%">
+	<div style="text-align: center;">
+	<table style="margin: 0 auto;">
+	    <% @isapres.each do |isapre| %>
+	    	<div id="myModal<%= isapre.id %>" class="modal" role="dialog">
+	            <%= render :partial => "home/shared/show", locals: {isapre: isapre}%>
+	        </div>
+
+		    <div hidden="">
+			    <%if isapre.id == 1%>
+			   		<%= @nombreIsapre = "BanMedica"  %>
+			   	<%elsif isapre.id == 2%>
+			   		<%= @nombreIsapre = "ConSalud"  %>	
+			   	<%elsif isapre.id == 3%>
+			   		<%= @nombreIsapre = "CruzBlanca"  %>		   		
+			   	<%end%>
+		    </div>
+		    <td style="padding-right: 40px">
+		    <div class= "logos" style="padding-top: 10%">
+		        <a class="toolmsj" style="background-color:white !important" data-toggle="modal" data-target="#myModal<%=isapre.id%>"> 
+		        	<span class="toolmsjtext"> <%=@nombreIsapre %></span> 
+		        	<%= image_tag( @nombreIsapre +".png", height:50) %>
+		        </a>
+		    </div>
+		    </td>
+	    <% end %>
+	</table>
+	</div>
+</div>
+
+<div class="parallax" style="background-image: url(<%= asset_path 'home2.jpg' %>); height: 400px; padding-top: 5%">
+
+        <h1 class="sub_titulo">Cotiza segun tu 7% o tus necesidades obteniendo</h1>        
+        <h1 class="sub_titulo">beneficios de 7% de salud actual</h1>        
+        <h1 class="sub_titulo">rentabilidad en el tiempo.</h1>
+
+</div>
+<div class="modal fade" id="myModal" role="dialog"></div>

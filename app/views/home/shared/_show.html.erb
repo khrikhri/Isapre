@@ -1,0 +1,17 @@
+<div class="modal-dialog modal-sm" style="padding-top: 7%; width: 50% !important; height: 50% !important">
+		      <div class="modal-content">
+		        <div class="modal-header">
+		        <div hidden=""><%=@nombreIsapre = isapre.name%></div>
+		        <div style="padding-top: 5px; padding-bottom: 10px"><%= image_tag( @nombreIsapre +".png", height:50) %></div>		        	
+		          <button type="button" class="close" data-dismiss="modal"></button>
+		          <h4 class="modal-title"><%=isapre.name%></h4>
+		        </div>
+		        <div class="modal-body">
+		          <p><%=isapre.description%></p>
+		          <p><%=isapre.other%></p>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		    </div>
